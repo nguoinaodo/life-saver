@@ -1,0 +1,11 @@
+version: '3'
+services:
+  mongodb:
+    container_name: mongodb
+    image: mongo:4.4.29
+    ports:
+      - 27017:27017
+    volumes:
+      - /opt/mongodb/db:/data/db
+      - ./mongod.conf:/etc/mongod.conf
+    command: mongod --config /etc/mongod.conf
